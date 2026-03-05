@@ -62,10 +62,17 @@ export default function DayCard({ day, index }: { day: TripDay; index: number })
         </p>
       </div>
 
-      {/* Description */}
-      <p className="font-body text-sm text-gray-700 leading-relaxed mb-4">
-        {day.description}
-      </p>
+      {/* Description — torn paper strip */}
+      <div className={`relative mt-2 mb-4 ${isEven ? "rotate-1" : "-rotate-1"}`}>
+        {/* Tape piece */}
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-yellow-200/70 rotate-2 rounded-sm shadow-sm z-10" />
+        {/* Paper strip */}
+        <div className="torn-paper bg-cream-dark px-5 py-5 shadow-md">
+          <p className="font-hand text-base text-tile-blue/80 leading-relaxed text-center">
+            {day.description}
+          </p>
+        </div>
+      </div>
 
       {/* Stops */}
       {day.stops.length > 0 && (
