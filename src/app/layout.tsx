@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portugal &amp; Beyond — April 2026",
+  title: "Portugal Trip 😁",
   description: "Our trip to Portugal and beyond!",
 };
 
