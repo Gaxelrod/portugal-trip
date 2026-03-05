@@ -6,6 +6,16 @@
   --color-tile-blue: #1E5FA8;
   --color-sunset: #E8734A;
   --color-sunset-light: #F4A87A;
-  --font-family-hand: "Caveat", cursive;
-  --font-family-body: "Inter", sans-serif;
+}
+
+@utility font-hand {
+  font-family: var(--font-caveat), cursive;
+}
+
+@utility font-headline {
+  font-family: var(--font-bungee-shade), cursive;
+}
+
+@utility font-body {
+  font-family: var(--font-inter), sans-serif;
 }

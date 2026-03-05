@@ -7,11 +7,11 @@ export default function Hero() {
       <div className="absolute bottom-0 left-1/2 w-48 h-24 bg-sunset-light/10 rounded-full blur-3xl -translate-x-1/2" />
 
       <p className="font-hand text-sunset text-2xl mb-2">April 2026</p>
-      <h1 className="font-hand text-5xl md:text-7xl text-tile-blue leading-tight mb-4">
+      <h1 className="font-headline text-5xl md:text-7xl text-tile-blue leading-tight mb-4">
         Portugal<br />&amp; Beyond
       </h1>
       <p className="font-body text-sm text-tile-blue/70 tracking-widest uppercase">
-        Garrett &middot; Tanya &middot; Alsu
+        Garrett &middot; Tanya <span className="text-sunset">&hearts;</span> &middot; Alsu
       </p>
 
       {/* Decorative divider */}

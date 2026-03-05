@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Caveat, Inter } from "next/font/google";
+import { Bungee_Shade, Caveat, Inter } from "next/font/google";
 import "./globals.css";
 
 const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
+});
+
+const bungeeShade = Bungee_Shade({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bungee-shade",
 });
 
 const inter = Inter({
@@ -24,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${caveat.variable} ${inter.variable} font-body bg-cream antialiased`}>
+      <body className={`${caveat.variable} ${inter.variable} ${bungeeShade.variable} font-body bg-cream antialiased`}>
         {children}
       </body>
     </html>
