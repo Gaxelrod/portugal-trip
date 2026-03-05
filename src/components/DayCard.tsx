@@ -21,45 +21,50 @@ export default function DayCard({ day, index }: { day: TripDay; index: number })
 
   return (
     <article className="relative px-4 mb-12 max-w-lg mx-auto">
-      {/* Date tab */}
-      <div
-        className={`inline-block px-4 py-1 mb-3 bg-tile-blue text-cream font-hand text-xl rounded-sm shadow-md ${
-          isEven ? "-rotate-1" : "rotate-1"
-        }`}
-      >
-        {day.date} {day.weekday && `\u2014 ${day.weekday}`}
-      </div>
-
-      {/* Birthday badge */}
-      {day.badge && (
-        <span className="ml-3 inline-block px-3 py-1 bg-sunset text-white font-hand text-lg rounded-full -rotate-3 shadow">
-          {day.badge}
-        </span>
-      )}
-
       {/* Location title */}
-      <h2 className="font-hand text-3xl md:text-4xl text-tile-blue mt-2 mb-1">
+      <h2 className="font-hand text-3xl md:text-4xl text-tile-blue mb-1">
         {day.location}
       </h2>
       <p className="font-hand text-sunset text-lg italic mb-4">{day.tagline}</p>
 
-      {/* Polaroid photo */}
-      <div
-        className={`bg-white p-2 pb-8 shadow-lg mb-4 ${
-          isEven ? "-rotate-2" : "rotate-2"
-        }`}
-      >
-        <div className="relative w-full aspect-[4/3] overflow-hidden">
-          <Image
-            src={day.image}
-            alt={day.location}
-            fill
-            className="object-cover"
-          />
+      {/* Polaroid photo with passport stamp date */}
+      <div className="relative">
+        <div
+          className={`bg-white p-2 pb-8 shadow-lg mb-4 ${
+            isEven ? "-rotate-2" : "rotate-2"
+          }`}
+        >
+          <div className="relative w-full aspect-[4/3] overflow-hidden">
+            <Image
+              src={day.image}
+              alt={day.location}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <p className="font-hand text-center text-tile-blue/60 text-sm mt-2">
+            {day.location}
+          </p>
         </div>
-        <p className="font-hand text-center text-tile-blue/60 text-sm mt-2">
-          {day.location}
-        </p>
+
+        {/* Passport stamp — top left corner of photo */}
+        <div className={`absolute -top-4 -left-3 z-10 ${isEven ? "-rotate-6" : "rotate-3"}`}>
+          <div className="border-2 border-sunset/70 rounded-md px-3 py-1.5 bg-cream/90 shadow-sm">
+            <p className="font-hand text-sunset text-xs tracking-wide uppercase leading-none">
+              {day.weekday || "TBD"}
+            </p>
+            <p className="font-hand text-tile-blue text-lg leading-tight font-bold">
+              {day.date}
+            </p>
+          </div>
+        </div>
+
+        {/* Birthday badge */}
+        {day.badge && (
+          <span className="absolute -top-3 -right-2 z-10 inline-block px-3 py-1 bg-sunset text-white font-hand text-lg rounded-full -rotate-3 shadow">
+            {day.badge}
+          </span>
+        )}
       </div>
 
       {/* Description — torn paper strip */}
