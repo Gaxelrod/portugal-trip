@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF8F0;
+  --color-cream-dark: #F5EDE3;
+  --color-tile-blue: #1E5FA8;
+  --color-sunset: #E8734A;
+  --color-sunset-light: #F4A87A;
+  --font-family-hand: "Caveat", cursive;
+  --font-family-body: "Inter", sans-serif;
+}
